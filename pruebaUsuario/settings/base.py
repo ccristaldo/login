@@ -26,9 +26,10 @@ SECRET_KEY = 'f5w8(-&y42ud8idkvumd!$2nr6#mxrf)kb0q3_ze*-owxet&ao'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ALLOWED_HOSTS = []
-LOGIN_URL = '/usuarios/bienvenida/'
-LOGIN_REDIRECT_URL = '/usuarios/bienvenida/'
+LOGIN_URL = 'index'
+LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = '/'
 
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.usuarios',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

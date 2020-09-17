@@ -1,0 +1,40 @@
+body {
+    background-color: #232E2E;
+}
+
+.imagenlogo {
+    background-color: #007F5F;
+    height: 15vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#contenedor {
+ text-align: left;
+ width: 100%;
+ margin: auto;
+}
+
+#lateral {
+ width: 25%;  /* Este será el ancho que tendrá tu columna */
+ float:right; /* Aquí determinas de lado quieres quede esta "columna" */
+}
+
+#principal {
+ width: 75%;
+ float: left;
+}
+/* Para limpiar los floats */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#page-content {
+    flex: 1 0 auto;    
+}
+  
+#sticky-footer {
+    flex-shrink: none;    
+}
