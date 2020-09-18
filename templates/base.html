@@ -35,11 +35,13 @@
 					<li class="nav-item">
 						<a class="btn btn-outline-success" style="color: #000000; font-weight: bold;" href="{% url 'index' %}" >Home <span class="sr-only">(current)</span></a>
 					</li>
+					{% if user.is_authenticated %}
 					<li class="nav-item">
-						<a class="btn btn-outline-success" style="color: #000000; font-weight: bold;" href="#">Crear Post</a>
+						<a class="btn btn-outline-success" style="color: #000000; font-weight: bold;" href="{% url 'posts:post_new' %}">Crear Post</a>
 					</li>
+					{% endif %}
 					<li class="nav-item">
-						<a class="btn btn-outline-success" style="color: #000000; font-weight: bold;" href="#">Ultimos Posteos</a>
+						<a class="btn btn-outline-success" style="color: #000000; font-weight: bold;" href="{% url 'posts:post_list' %}">Ultimos Posteos</a>
 					</li>
 					<li class="nav-item">
 						<a class="btn btn-outline-success" style="color: #000000; font-weight: bold;" href="#">Ultimos Comentarios</a>
@@ -74,7 +76,8 @@
 	<!--FOOTER-->
 	<footer id="sticky-footer" class="py-4 text-white" style="background-color: #3FC18D;">
 		<div class="container text-center" style="color: #000000;">
-		  <small>Copyright &copy; Your Website</small>
+		  <small>Copyright &copy; Your Website</small><br>
+		  <!-- <a style="color: #000000;" href="{% url 'index' %}">Home</a> -->
 		</div>
 	</footer>
 	<!--FIN DEL FOOTER-->

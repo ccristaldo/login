@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}  
+<div class="post">
+       
+        <h2>{{ posteo.title }}</h2>
+        <p>{{ posteo.text|linebreaksbr }}</p>
+         {% if posteo.published_date %}
+            <div class="date">
+                <p>Publicado por: {{posteo.author}}. Fecha: {{ posteo.published_date }}</p>
+            </div>
+        {% endif %}
+    </div>
+   
+   {% endblock contenido %}
