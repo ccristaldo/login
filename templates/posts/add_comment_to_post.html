@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block contenido %}  
+
+
+<div style="color: white">
+
+<h1>Nuevo Comentario</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Comentar</button>
+    </form>
+   </div>
+   {{user}}
+
+
+    {% endblock %}

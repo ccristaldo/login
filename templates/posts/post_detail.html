@@ -10,6 +10,34 @@
                 <p>Publicado por: {{posteo.author}}. Fecha: {{ posteo.published_date }}</p>
             </div>
         {% endif %}
+        {% if user.is_authenticated and user == posteo.author %}
+
+        <a  href="{% url 'posts:post_edit' pk=posteo.pk %}">Editar</a>
+
+        {% endif %}
     </div>
+    <hr>
+
+        {% for comment in posteo.comments.all %}
+            <div class="comment">
+                <table  border="1">
+                    <td>
+                <p>{{ comment.text|linebreaks }}</p>
+                <div class="date">{{ comment.created_date }}</div>
+                <strong>{{ comment.author }}</strong>
+                </td>
+            </table>
+                
+            </div>
+        {% empty %}
+            <p>Sin comentarios. Sé el primero!</p>
+        {% endfor %}
+
+        {% if user.is_authenticated %}
+            <a href="{% url 'posts:add_comment_to_post' pk=posteo.pk %}">Comentar</a>
+        {% else %}
+            <br>
+            <p>Debe estar logueado para comentar </p>
+        {% endif %}
    
    {% endblock contenido %}

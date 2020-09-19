@@ -59,8 +59,9 @@
 				{% else %}	
 				<div>
 					<div>
-						<a href="{% url 'usuarios:sign_up' %}" class="btn btn-warning" style="color: #000000; font-weight: bold">REGISTRARSE</a>
-						<a href="{% url 'usuarios:sign_in' %}" class="btn btn-warning" style="color: #000000; font-weight: bold"> ACCEDER</a>
+						<a href="{% url 'usuarios:sign_up' %}?next={{ request.path|urlencode }}" class="btn btn-warning" style="color: #000000; font-weight: bold">REGISTRARSE</a>
+						<a href="{% url 'usuarios:sign_in' %}?next={{ request.path|urlencode }}" class="btn btn-warning" style="color: #000000; font-weight: bold"> ACCEDER</a>
+						
 					</div>
 				</div>
 				{% endif %}

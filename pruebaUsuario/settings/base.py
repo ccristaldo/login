@@ -28,9 +28,11 @@ DEBUG = True
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ALLOWED_HOSTS = []
-LOGIN_URL = 'index'
+LOGIN_URL = '/usuarios/inicia-sesion/'
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = '/'
+
+
 
 
 # Application definition
